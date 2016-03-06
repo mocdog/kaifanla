@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="kaifanla">
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script src="jqm/jquery.mobile-1.4.5.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="js/angular-touch.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-controller="parentCtrl">
+
+<div id="pageStart" data-role="page" ng-controller="startCtrl" ng-swipe-left="jump('main.html')">
+  <div class="fullscreen-content">
+    <img class="img-responsive" src="img/kid-foods.jpg" alt=""/>
+  </div>
+</div>
+
+</body>
+</html>

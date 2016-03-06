@@ -1,0 +1,63 @@
+<div id="pageMain" data-role="page" ng-controller="mainCtrl">
+  <div data-role="header">
+    <a href="#" onclick="$.mobile.changePage('index.html')">返回</a>
+    <h1>KAIFANLA</h1>
+    <a href="#mypanel" class="ui-btn-right" ng-show="!logSuccess">登录</a>
+    <a href = "#" data-role="button" class="ui-btn-right" data-icon="user" ng-show="logSuccess">用户:{{info.uname}}</a>
+  </div>
+  <div class="ui-content">
+    <h3>菜品列表</h3>
+    <ul data-role="listview">
+      <li ng-repeat="d in dishList">
+        <!--<a href="detail.html?did={{d.did}}">-->
+        <a href="#" ng-click="showDetail(d.did)">
+          <img ng-src="img/{{d.img_sm}}" alt=""/>
+
+          <h3>{{d.name}}</h3>
+
+          <p>{{d.material}}</p>
+
+          <p>{{d.price | currency : '￥'}}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div data-role="footer">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" onclick="$.mobile.changePage('main.html')" data-icon="grid">菜品详情</a></li>
+        <li><a href="#" onclick="$.mobile.changePage('myorder.html')" data-icon="user">我的订单</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="panel" id="mypanel" data-theme="b">
+    <div data-role="tabs" id="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-ajax="false" ng-click="toggle('login')">登录</a></li>
+          <li><a href="#" data-ajax="false" ng-click="toggle('register')">注册</a></li>
+        </ul>
+      </div>
+      <div id="login" ng-show="isLogin">
+        <form>
+          <label for="uname" class="ui-hidden-accessible">用户名:</label>
+          <input name="uname" id="uname" placeholder="用户名" type="text" ng-model="name">
+          <label for="pwd" class="ui-hidden-accessible">密码:</label>
+          <input name="pwd" id="pwd" placeholder="密码" type="password" ng-model="pwd">
+          <a href="#" ng-click="login()" data-role="button">登录</a>
+        </form>
+      </div>
+      <div id="register" ng-show="!isLogin">
+        <form>
+          <label for="rname" class="ui-hidden-accessible">用户名:</label>
+          <input name="rname" id="rname" placeholder="用户名" type="text" ng-model="rname">
+          <label for="rpwd" class="ui-hidden-accessible">密码:</label>
+          <input name="rpwd" id="rpwd" placeholder="密码" type="text" ng-model="rname">
+          <label for="rtel" class="ui-hidden-accessible">手机号:</label>
+          <input name="rtel" id="rtel" placeholder="手机号" type="text" ng-model="rtel">
+          <a href="#" ng-click="register()" data-role="button">注册</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

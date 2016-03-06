@@ -1,0 +1,46 @@
+<div id="pageDetail" data-role="page" ng-controller="detailCtrl">
+  <div data-role="header">
+    <a href="#" data-rel="back">返回</a>
+
+    <h1>菜品详情</h1>
+    <a href = "#" data-role="button" class="ui-btn-right" data-icon="user" ng-show="logSuccess">用户:{{uname}}</a>
+  </div>
+  <div class="ui-content">
+    <div class="ui-corner-all custom-corners">
+      <div class="ui-bar ui-bar-a">
+        <h3>{{dish.name}}</h3>
+      </div>
+      <div class="ui-body ui-body-a">
+        <img class="detail_bgImg" src="img/{{dish.img_lg}}"/>
+
+        <p>
+
+        <h3>主要原料:</h3>{{dish.material}}
+        </p>
+
+        <p>{{dish.detail}}</p>
+        <hr/>
+        ￥{{dish.price}}
+      </div>
+      <div class="ui-bar ui-bar-a">
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <a href="#" ng-click="jumpOrder(dish.did)" data-role="button">我要订单</a>
+          </div>
+          <div class="ui-block-b">
+            <a href="main.html" data-role="button">我再看看</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="main.html" data-icon="grid">菜品详情</a></li>
+        <li><a href="#" data-icon="user">我的订单</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

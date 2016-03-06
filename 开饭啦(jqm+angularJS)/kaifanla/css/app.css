@@ -1,0 +1,13 @@
+.img-responsive {
+  max-width: 100%;
+  display: block;
+}
+.fullscreen-content {
+  margin-top: 50%;
+}
+.fullscreen-content img {
+  /*margin-top: -3em;*/
+}
+.detail_bgImg{
+  max-width: 100%;
+}
